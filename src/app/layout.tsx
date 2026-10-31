@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import "./globals.css";
 import Navbar from "@/components/home/Navbar";
 import { Toaster } from "@/components/ui/toast";
+import Footer from "@/components/home/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="flex min-h-full flex-col">
         <Navbar />
         <div> {children}</div>
+        <Footer />
         <Toaster />
       </body>
     </html>
