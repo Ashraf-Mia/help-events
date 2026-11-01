@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { toast } from "@/components/ui/toast";
 import { authClient } from "@/lib/auth-client";
 
 const eventTypes = [
@@ -29,13 +30,32 @@ const CreateEventPage = () => {
 
   const today = new Date().toLocaleDateString("en-CA");
 
-  const onSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const event = Object.fromEntries(formData.entries());
 
-    // TODO: send `event` to your API (POST) and save it in MongoDB
-    console.log(event);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/add-event`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(event),
+    });
+
+    const result = await res.json();
+
+    if (res.ok) {
+      form.reset();
+      toast.add({
+        type: "success",
+        title: "Event package created",
+        description: `${event.title} has been added successfully.`,
+      });
+    }
+
+    console.log(result);
   };
 
   return (

@@ -6,13 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "seed:events": "node --env-file=.env scripts/seed-events.mjs"
+    "lint": "eslint"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
     "@better-auth/mongo-adapter": "^1.7.14",
-    "@heroui/react": "^3.2.7",
     "@heroui/styles": "^3.2.7",
     "@hugeicons/core-free-icons": "^4.4.0",
     "@hugeicons/react": "^1.1.10",
@@ -37,7 +35,6 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",
-    "daisyui": "^5.7.50",
     "eslint": "^9",
     "eslint-config-next": "16.4.3",
     "tailwindcss": "^4",

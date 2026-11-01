@@ -1,5 +1,8 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/toast";
 import { authClient, signIn } from "@/lib/auth-client";
 import Link from "next/link";
@@ -98,80 +101,92 @@ const SignUpPage = () => {
   };
 
   return (
-    <div
-      data-theme="light"
-      className="flex min-h-screen flex-col items-center justify-center bg-transparent px-4 py-8 sm:py-12"
-    >
+    <div className="flex min-h-screen flex-col items-center justify-center px-4 py-8 sm:py-12">
       <h2 className="text-center text-2xl font-bold sm:text-3xl">
         Create your account
       </h2>
-      <p className="px-2 pb-4 pt-1 text-center text-sm font-medium text-black/50">
+      <p className="px-2 pb-6 pt-1 text-center text-sm font-medium text-black/50">
         Sign up for free and start joining community events.
       </p>
 
-      <form className="flex w-full max-w-md justify-center" onSubmit={onSubmit}>
-        <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-full border p-4 sm:p-6">
-          <label className="label">Name</label>
-          <input
-            name="name"
-            type="text"
-            required
-            className="input w-full"
-            placeholder="e.g. Ashraf Mia"
-          />
+      <form
+        onSubmit={onSubmit}
+        className="w-full max-w-md rounded-2xl border bg-white p-5 shadow-sm sm:p-8"
+      >
+        <FieldGroup>
+          <Field>
+            <FieldLabel htmlFor="name">Name</FieldLabel>
+            <Input
+              id="name"
+              name="name"
+              type="text"
+              required
+              placeholder="e.g. Ashraf Mia"
+            />
+          </Field>
 
-          <label className="label">Photo URL</label>
-          <input
-            name="image"
-            type="url"
-            className="input w-full"
-            placeholder="Paste your profile photo link"
-          />
+          <Field>
+            <FieldLabel htmlFor="image">Photo URL</FieldLabel>
+            <Input
+              id="image"
+              name="image"
+              type="url"
+              placeholder="Paste your profile photo link"
+            />
+          </Field>
 
-          <label className="label">Email</label>
-          <input
-            name="email"
-            type="email"
-            required
-            className="input w-full"
-            placeholder="you@example.com"
-          />
+          <Field>
+            <FieldLabel htmlFor="email">Email</FieldLabel>
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              required
+              placeholder="you@example.com"
+            />
+          </Field>
 
-          <label className="label">Password</label>
-          <input
-            name="password"
-            type="password"
-            required
-            className="input w-full"
-            placeholder="8+ characters, with upper & lowercase"
-          />
+          <Field>
+            <FieldLabel htmlFor="password">Password</FieldLabel>
+            <Input
+              id="password"
+              name="password"
+              type="password"
+              required
+              placeholder="8+ characters, with upper & lowercase"
+            />
+          </Field>
 
-          <label className="label">Confirm password</label>
-          <input
-            name="confirmPassword"
-            type="password"
-            required
-            className="input w-full"
-            placeholder="Re-enter your password"
-          />
+          <Field>
+            <FieldLabel htmlFor="confirmPassword">Confirm password</FieldLabel>
+            <Input
+              id="confirmPassword"
+              name="confirmPassword"
+              type="password"
+              required
+              placeholder="Re-enter your password"
+            />
+          </Field>
 
-          <button
+          <Button
             type="submit"
-            className="btn mt-4 w-full bg-[#0E3B43] text-white hover:bg-[#206470]"
+            className="h-10 w-full bg-[#0E3B43] text-white hover:bg-[#206470]"
           >
             Sign up
-          </button>
-        </fieldset>
+          </Button>
+        </FieldGroup>
       </form>
 
       <div className="w-full max-w-md">
-        <span className="mt-4 flex justify-center text-sm font-bold">
+        <span className="mt-5 flex justify-center text-sm font-bold">
           Or, sign up with
         </span>
         <div className="flex flex-col gap-3 pt-3 sm:flex-row sm:justify-center sm:gap-4">
-          <button
+          <Button
+            type="button"
+            variant="outline"
             onClick={handleGoogleSignIn}
-            className="btn w-full border-[#e5e5e5] bg-white text-black sm:w-auto"
+            className="h-10 w-full sm:w-auto"
           >
             <svg
               aria-label="Google logo"
@@ -201,10 +216,11 @@ const SignUpPage = () => {
               </g>
             </svg>
             Continue with Google
-          </button>
-          <button
+          </Button>
+          <Button
+            type="button"
             onClick={handleGithubSignIn}
-            className="btn w-full border-black bg-black text-white sm:w-auto"
+            className="h-10 w-full bg-black text-white hover:bg-black/80 sm:w-auto"
           >
             <svg
               aria-label="GitHub logo"
@@ -219,7 +235,7 @@ const SignUpPage = () => {
               ></path>
             </svg>
             Continue with GitHub
-          </button>
+          </Button>
         </div>
 
         <p className="pt-5 text-center text-sm sm:text-base">

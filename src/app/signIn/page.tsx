@@ -1,5 +1,8 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/toast";
 import { signIn } from "@/lib/auth-client";
 import Link from "next/link";
@@ -54,52 +57,58 @@ const SignInPage = () => {
   };
 
   return (
-    <div
-      data-theme="light"
-      className="flex min-h-screen flex-col items-center justify-center bg-transparent px-4 py-8 sm:py-12"
-    >
-      <h2 className="text-center text-2xl font-bold sm:text-3xl">Sign in</h2>
-      <p className="px-2 pb-4 pt-1 text-center text-sm font-medium text-black/50">
+    <div className="flex min-h-screen flex-col items-center justify-center px-4 py-8 sm:py-12">
+      <h2 className="text-center text-2xl font-bold sm:text-3xl">Welcome</h2>
+      <p className="px-2 pb-6 pt-1 text-center text-sm font-medium text-black/50">
         Sign in to join events and manage your profile.
       </p>
 
-      <form onSubmit={onSubmit} className="w-full max-w-md">
-        <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-full border p-4 sm:p-6">
-          <label className="label">Email</label>
-          <input
-            name="email"
-            type="email"
-            required
-            className="input w-full"
-            placeholder="you@example.com"
-          />
+      <form
+        onSubmit={onSubmit}
+        className="w-full max-w-md rounded-2xl border bg-white p-5 shadow-sm sm:p-8"
+      >
+        <FieldGroup>
+          <Field>
+            <FieldLabel htmlFor="email">Email</FieldLabel>
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              required
+              placeholder="you@example.com"
+            />
+          </Field>
 
-          <label className="label">Password</label>
-          <input
-            name="password"
-            type="password"
-            required
-            className="input w-full"
-            placeholder="Enter your password"
-          />
+          <Field>
+            <FieldLabel htmlFor="password">Password</FieldLabel>
+            <Input
+              id="password"
+              name="password"
+              type="password"
+              required
+              placeholder="Enter your password"
+            />
+          </Field>
 
-          <button
+          <Button
             type="submit"
-            className="btn mt-4 w-full bg-[#0E3B43] text-white hover:bg-[#206470]"
+            className="h-10 w-full bg-[#0E3B43] text-white hover:bg-[#206470]"
           >
             Sign in
-          </button>
-        </fieldset>
+          </Button>
+        </FieldGroup>
       </form>
 
       <div className="w-full max-w-md">
-        <span className="mt-4 flex justify-center text-sm font-bold">
+        <span className="mt-5 flex justify-center text-sm font-bold">
           Or, sign in with
         </span>
         <div className="flex flex-col gap-3 pt-3 sm:flex-row sm:justify-center sm:gap-4">
-          <button
+          <Button
+            type="button"
+            variant="outline"
             onClick={handleGoogleSignIn}
-            className="btn w-full border-[#e5e5e5] bg-white text-black sm:w-auto"
+            className="h-10 w-full sm:w-auto"
           >
             <svg
               aria-label="Google logo"
@@ -129,10 +138,11 @@ const SignInPage = () => {
               </g>
             </svg>
             Continue with Google
-          </button>
-          <button
+          </Button>
+          <Button
+            type="button"
             onClick={handleGithubSignIn}
-            className="btn w-full border-black bg-black text-white sm:w-auto"
+            className="h-10 w-full bg-black text-white hover:bg-black/80 sm:w-auto"
           >
             <svg
               aria-label="GitHub logo"
@@ -147,7 +157,7 @@ const SignInPage = () => {
               ></path>
             </svg>
             Continue with GitHub
-          </button>
+          </Button>
         </div>
 
         <p className="pt-5 text-center text-sm sm:text-base">
