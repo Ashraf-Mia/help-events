@@ -1,0 +1,103 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { CalendarDays, MapPin } from "lucide-react";
+import { Button, buttonVariants } from "@/components/ui/button";
+import DeleteEventDialog from "@/components/events/delete-event-dialog";
+import EditEventDialog from "@/components/events/edit-event-dialog";
+import { IEvent } from "@/lib/events";
+import { cn } from "@/lib/utils";
+
+const ManageEventCard = ({ event }: { event: IEvent }) => {
+  const [editOpen, setEditOpen] = useState(false);
+  const [deleteOpen, setDeleteOpen] = useState(false);
+
+  const formattedDate = new Date(event.date).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+
+  return (
+    <div className="flex h-full flex-col overflow-hidden rounded-2xl border bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
+      <div className="relative h-48 w-full overflow-hidden bg-gray-100">
+        <Image
+          src={event.thumbnail}
+          width={300}
+          height={200}
+          alt={event.title}
+          className="h-full w-full object-cover"
+        />
+        <span className="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-[#0E3B43] shadow-sm">
+          {event.type}
+        </span>
+      </div>
+
+      <div className="flex flex-1 flex-col p-5">
+        <h3 className="line-clamp-1 text-lg font-semibold text-gray-900">
+          {event.title}
+        </h3>
+
+        <div className="mt-3 space-y-1.5 text-sm text-gray-600">
+          <p className="flex items-center gap-2">
+            <CalendarDays className="size-4 shrink-0 text-[#2FA37A]" />
+            {formattedDate}
+          </p>
+          <p className="flex items-center gap-2">
+            <MapPin className="size-4 shrink-0 text-[#2FA37A]" />
+            <span className="line-clamp-1">{event.location}</span>
+          </p>
+        </div>
+
+        <p className="mt-3 line-clamp-2 text-sm text-gray-500">
+          {event.description}
+        </p>
+
+        <div className="mt-5 flex flex-col gap-2">
+          <Link
+            href={`/events/${event._id}`}
+            className={cn(
+              buttonVariants(),
+              "h-10 w-full bg-[#0E3B43] text-white hover:bg-[#206470]",
+            )}
+          >
+            View
+          </Link>
+
+          <div className="grid grid-cols-2 gap-2">
+            <Button
+              variant="outline"
+              className="h-10 w-full"
+              onClick={() => setEditOpen(true)}
+            >
+              Edit
+            </Button>
+            <Button
+              variant="destructive"
+              className="h-10 w-full"
+              onClick={() => setDeleteOpen(true)}
+            >
+              Delete
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      <EditEventDialog
+        event={event}
+        open={editOpen}
+        onOpenChange={setEditOpen}
+      />
+      <DeleteEventDialog
+        event={event}
+        open={deleteOpen}
+        onOpenChange={setDeleteOpen}
+      />
+    </div>
+  );
+};
+
+export default ManageEventCard;
