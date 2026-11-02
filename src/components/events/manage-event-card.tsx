@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { CalendarDays, MapPin } from "lucide-react";
+import { CalendarDays, MapPin, Pencil, Trash2 } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import DeleteEventDialog from "@/components/events/delete-event-dialog";
 import EditEventDialog from "@/components/events/edit-event-dialog";
@@ -56,33 +56,34 @@ const ManageEventCard = ({ event }: { event: IEvent }) => {
           {event.description}
         </p>
 
-        <div className="mt-5 flex flex-col gap-2">
+        <div className="mt-5 border-t border-gray-300 pt-4 grid grid-cols-3 gap-2">
           <Link
             href={`/events/${event._id}`}
             className={cn(
               buttonVariants(),
-              "h-10 w-full bg-[#0E3B43] text-white hover:bg-[#206470]",
+              "h-10 w-full bg-[#0E3B43] text-white hover:bg-[#206470] flex items-center justify-center",
             )}
           >
             View
           </Link>
 
-          <div className="grid grid-cols-2 gap-2">
-            <Button
-              variant="outline"
-              className="h-10 w-full"
-              onClick={() => setEditOpen(true)}
-            >
-              Edit
-            </Button>
-            <Button
-              variant="destructive"
-              className="h-10 w-full"
-              onClick={() => setDeleteOpen(true)}
-            >
-              Delete
-            </Button>
-          </div>
+          <Button
+            variant="outline"
+            className="h-10 w-full flex items-center justify-center gap-1.5"
+            onClick={() => setEditOpen(true)}
+          >
+            <Pencil className="size-4" />
+            Edit
+          </Button>
+
+          <Button
+            variant="destructive"
+            className="h-10 w-full flex items-center justify-center gap-1.5"
+            onClick={() => setDeleteOpen(true)}
+          >
+            <Trash2 className="size-4" />
+            Delete
+          </Button>
         </div>
       </div>
 
