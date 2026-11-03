@@ -7,4 +7,6 @@ export interface IEvent {
   location: string;
   email: string;
   thumbnail: string;
+  creatorName?: string | null;
+  creatorImage?: string | null;
 }

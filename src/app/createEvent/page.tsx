@@ -34,7 +34,12 @@ const CreateEventPage = () => {
     e.preventDefault();
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const event = Object.fromEntries(formData.entries());
+    const title = formData.get("title")?.toString() ?? "";
+    const event = {
+      ...Object.fromEntries(formData.entries()),
+      creatorName: session?.user.name,
+      creatorImage: session?.user.image,
+    };
 
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/add-event`, {
       method: "POST",
@@ -51,7 +56,7 @@ const CreateEventPage = () => {
       toast.add({
         type: "success",
         title: "Event package created",
-        description: `${event.title} has been added successfully.`,
+        description: `${title} has been added successfully.`,
       });
     }
 
