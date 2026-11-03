@@ -1,36 +1,113 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Help Events – Social Development Events Platform
 
-## Getting Started
+Help Events is a community-based event management platform. It helps people create, join, and manage social service events in their local areas.
 
-First, run the development server:
+The main goal of this platform is to bring people together and help others through community work.
+
+## Live Website
+
+- **Live Site:** [Add Your Live Website Link]
+
+## GitHub Repositories
+
+- **Client Side:** [Add Client Repository Link]
+- **Server Side:** [Add Server Repository Link]
+
+## Features
+
+- Users can create social service events and share them with others.
+- Anyone can view upcoming events without logging in.
+- Logged-in users can join and leave events.
+- Users can see all the events they have joined.
+- Users can manage, update, and delete their own events.
+- Users can search events and filter them by category.
+- Users can register and log in using email and password.
+- Users can also log in using Google or GitHub.
+- Users can change between light and dark themes.
+- The website works on mobile, tablet, and desktop devices.
+
+## Technologies Used
+
+### Frontend
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Shadcn UI
+
+### Backend
+
+- Node.js
+- Express.js
+- MongoDB
+
+### Authentication
+
+- Better Auth
+- MongoDB Adapter
+- JWT
+
+## Main Pages
+
+- **Home:** Shows the banner, features, upcoming events, gallery, and newsletter section.
+- **Upcoming Events:** Shows all future events created by users.
+- **Event Details:** Shows full event information and allows logged-in users to join an event.
+- **Create Event:** Allows logged-in users to create new events.
+- **Manage Events:** Allows users to update and delete their own events.
+- **Joined Events:** Shows all events joined by the logged-in user.
+- **Login & Register:** Allows users to create an account and log in.
+
+## Installation
+
+### 1. Clone the Client Repository
+
+```bash
+git clone YOUR_CLIENT_REPOSITORY_URL
+cd YOUR_CLIENT_PROJECT_FOLDER
+npm install
+```
+
+### 2. Clone the Server Repository
+
+```bash
+git clone YOUR_SERVER_REPOSITORY_URL
+cd YOUR_SERVER_PROJECT_FOLDER
+npm install
+```
+
+### 3. Setup Environment Variables
+
+Create `.env.local` in the client project and add the required environment variables.
+
+Create `.env` in the server project and add your MongoDB connection URL and other required environment variables.
+
+Do not share your secret keys or passwords publicly.
+
+### 4. Run the Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+If your server uses Nodemon:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+nodemon index.js
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 5. Run the Client
 
-## Learn More
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open your browser and visit:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```text
+http://localhost:3000
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Purpose
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Help Events is built to make community service easier. It helps people work together, support those in need, and make a positive change in society.
