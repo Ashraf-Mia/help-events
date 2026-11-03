@@ -10,3 +10,11 @@ export interface IEvent {
   creatorName?: string | null;
   creatorImage?: string | null;
 }
+
+export interface IJoinedEvent extends IEvent {
+  eventId: string;
+  userEmail: string;
+  userName?: string;
+  userImage?: string | null;
+  joinedAt?: string;
+}

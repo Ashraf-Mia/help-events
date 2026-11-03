@@ -44,7 +44,9 @@ const ManageEventsPage = async () => {
           Please log in to see your events.
         </p>
       ) : events.length === 0 ? (
-        <p className="py-12 text-center text-gray-500">You have no event yet.</p>
+        <p className="py-12 text-center text-gray-500">
+          You have no event yet.
+        </p>
       ) : (
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {events.map((event) => (
