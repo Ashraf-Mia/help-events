@@ -6,12 +6,12 @@ The main goal of this platform is to bring people together and help others throu
 
 ## Live Website
 
-- **Live Site:** [Add Your Live Website Link]
+- **Live Site:** https://helpeventsfrontend.vercel.app/
 
 ## GitHub Repositories
 
-- **Client Side:** [Add Client Repository Link]
-- **Server Side:** [Add Server Repository Link]
+- **Client Side:** https://github.com/Ashraf-Mia/help-events
+- **Server Side:** https://github.com/Ashraf-Mia/help-event-server
 
 ## Features
 
