@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/toast";
 import { authClient } from "@/lib/auth-client";
+import { getTokenFromClient } from "@/lib/getTokenFromClient";
 
 const eventTypes = [
   "Donation",
@@ -41,10 +42,13 @@ const CreateEventPage = () => {
       creatorImage: session?.user.image,
     };
 
+    const token = await getTokenFromClient();
+
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/add-event`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(event),
     });

@@ -1,6 +1,7 @@
 import ManageEventCard from "@/components/events/manage-event-card";
 import { auth } from "@/lib/auth";
 import { IEvent } from "@/lib/events";
+import { getTokenFromServer } from "@/lib/getTokenFromServer";
 import { headers } from "next/headers";
 import React from "react";
 
@@ -10,12 +11,18 @@ const ManageEventsPage = async () => {
   });
   const user = session?.user;
   let events: IEvent[] = [];
+
+  const token = await getTokenFromServer();
+
   if (user?.email) {
     try {
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/my-events/${user.email}`,
         {
           cache: "no-store",
+          headers: {
+            authorization: `Bearer ${token}`,
+          },
         },
       );
       if (res.ok) {

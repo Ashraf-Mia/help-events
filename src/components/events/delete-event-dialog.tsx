@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { toast } from "@/components/ui/toast";
 import { IEvent } from "@/lib/events";
+import { getTokenFromClient } from "@/lib/getTokenFromClient";
 
 type Props = {
   event: IEvent;
@@ -28,11 +29,16 @@ const DeleteEventDialog = ({ event, open, onOpenChange }: Props) => {
   const onDelete = async () => {
     setPending(true);
 
+    const token = await getTokenFromClient();
+
     try {
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/my-events/${event._id}`,
         {
           method: "DELETE",
+          headers: {
+            authorization: `Bearer ${token}`,
+          },
         },
       );
 

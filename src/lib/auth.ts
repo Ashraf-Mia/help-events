@@ -1,12 +1,15 @@
 import { betterAuth } from "better-auth";
 import { mongodbAdapter } from "@better-auth/mongo-adapter";
-import { getDatabase, getMongoClient } from "@/lib/mongodb";
 
-const db = getDatabase();
+import { jwt } from "better-auth/plugins";
+import { MongoClient } from "mongodb";
+
+const client = new MongoClient(process.env.MONGODB_URI as string);
+const db = client.db("help-events");
 
 export const auth = betterAuth({
   database: mongodbAdapter(db, {
-    client: getMongoClient(),
+    client,
   }),
   emailAndPassword: {
     enabled: true,
@@ -19,6 +22,14 @@ export const auth = betterAuth({
     github: {
       clientId: process.env.GITHUB_CLIENT_ID as string,
       clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
+    },
+  },
+  plugins: [jwt()],
+  session: {
+    cookieCache: {
+      enabled: true,
+      strategy: "jwt",
+      maxAge: 5 * 24 * 60 * 60,
     },
   },
 });

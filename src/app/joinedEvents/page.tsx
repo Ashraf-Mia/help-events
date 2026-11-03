@@ -1,6 +1,7 @@
 import JoinedEventCard from "@/components/events/joined-event-card";
 import { auth } from "@/lib/auth";
 import { IJoinedEvent } from "@/lib/events";
+import { getTokenFromServer } from "@/lib/getTokenFromServer";
 import { headers } from "next/headers";
 
 const JoinedEventsPage = async () => {
@@ -10,13 +11,18 @@ const JoinedEventsPage = async () => {
   const user = session?.user;
 
   let events: IJoinedEvent[] = [];
-  console.log("ashraf", events);
+  // console.log("ashraf", events);
+
+  const token = await getTokenFromServer();
 
   if (user?.email) {
     try {
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/my-joined/${user.email}`,
         {
+          headers: {
+            authorization: `Bearer ${token}`,
+          },
           cache: "no-store",
         },
       );

@@ -12,15 +12,12 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import {
-  Field,
-  FieldGroup,
-  FieldLabel,
-} from "@/components/ui/field";
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/toast";
 import { IEvent } from "@/lib/events";
+import { getTokenFromClient } from "@/lib/getTokenFromClient";
 
 type Props = {
   event: IEvent;
@@ -59,6 +56,7 @@ const EditEventDialog = ({ event, open, onOpenChange }: Props) => {
     const formData = new FormData(e.currentTarget);
     const updatedData = Object.fromEntries(formData.entries());
 
+    const token = await getTokenFromClient();
     try {
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/my-events/${event._id}`,
@@ -66,6 +64,7 @@ const EditEventDialog = ({ event, open, onOpenChange }: Props) => {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
+            authorization: `Bearer ${token}`,
           },
           body: JSON.stringify(updatedData),
         },
@@ -108,7 +107,9 @@ const EditEventDialog = ({ event, open, onOpenChange }: Props) => {
         <form onSubmit={onSubmit}>
           <FieldGroup>
             <Field>
-              <FieldLabel htmlFor={`title-${event._id}`}>Event Title</FieldLabel>
+              <FieldLabel htmlFor={`title-${event._id}`}>
+                Event Title
+              </FieldLabel>
               <Input
                 id={`title-${event._id}`}
                 name="title"

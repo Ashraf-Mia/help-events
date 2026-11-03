@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/toast";
 import { authClient } from "@/lib/auth-client";
 import { IEvent } from "@/lib/events";
+
 import { Check } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -27,7 +28,6 @@ const JoinButton = ({ event, isPast }: Props) => {
 
   useEffect(() => {
     if (!email) return;
-
     const checkJoined = async () => {
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/is-joined?eventId=${event._id}&userEmail=${encodeURIComponent(email)}`,
