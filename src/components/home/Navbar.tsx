@@ -10,7 +10,13 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { signOut, useSession } from "@/lib/auth-client";
-import { CalendarCheck, CalendarCog, CalendarPlus, LogOut } from "lucide-react";
+import {
+  CalendarCheck,
+  CalendarCog,
+  CalendarPlus,
+  LogOut,
+  UserRound,
+} from "lucide-react";
 import HelpEventsLogo from "../shared/HelpEventsLogo";
 
 export default function Navbar() {
@@ -32,7 +38,7 @@ export default function Navbar() {
         </Link>
 
         <Link
-          href="/upcomingEvents"
+          href="/upcoming-events"
           className="whitespace-nowrap text-xs font-medium text-white sm:justify-self-center sm:text-base"
         >
           Upcoming Events
@@ -83,6 +89,13 @@ export default function Navbar() {
                   >
                     <CalendarCheck className="size-4" />
                     Joined Events
+                  </Link>
+                  <Link
+                    href="/profile"
+                    className="flex items-center gap-3 rounded-lg px-3 pt-2  text-sm font-medium text-gray-700 transition-colors hover:bg-[#0E3B43]/10 hover:text-[#0E3B43]"
+                  >
+                    <UserRound className="size-4" />
+                    Profile
                   </Link>
                 </div>
 
