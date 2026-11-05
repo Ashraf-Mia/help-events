@@ -30,6 +30,9 @@ const ManageEventsPage = async () => {
         },
       },
     );
+
+    console.log(res, "respose");
+
     if (res.ok) {
       const data = await res.json();
       events = Array.isArray(data) ? data : [];
@@ -67,6 +70,11 @@ const ManageEventsPage = async () => {
           ))}
         </div>
       )}
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {events.map((event) => (
+          <ManageEventCard key={event._id} event={event} />
+        ))}
+      </div>
     </div>
   );
 };
