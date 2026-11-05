@@ -15,7 +15,7 @@ import {
   CalendarCog,
   CalendarPlus,
   LogOut,
-  UserRound,
+  User,
 } from "lucide-react";
 import HelpEventsLogo from "../shared/HelpEventsLogo";
 
@@ -94,7 +94,7 @@ export default function Navbar() {
                     href="/profile"
                     className="flex items-center gap-3 rounded-lg px-3 pt-2  text-sm font-medium text-gray-700 transition-colors hover:bg-[#0E3B43]/10 hover:text-[#0E3B43]"
                   >
-                    <UserRound className="size-4" />
+                    <User className="size-4" />
                     Profile
                   </Link>
                 </div>
