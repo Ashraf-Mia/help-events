@@ -28,7 +28,7 @@ const EventsView = async ({ type, search }: Props) => {
       <div className="mb-8 flex flex-col gap-4 border-b pb-6 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-2xl font-bold sm:text-3xl">Upcoming Events</h1>
-          <p className="mt-2 max-w-xl text-sm text-gray-600 sm:text-base">
+          <p className="mt-2 max-w-xl text-sm text-muted-foreground sm:text-base">
             Find social service events near you and be part of the change. Join
             an event, or start your own and bring your community together.
           </p>
@@ -53,7 +53,9 @@ const EventsView = async ({ type, search }: Props) => {
       </div>
 
       {data.length === 0 ? (
-        <p className="py-12 text-center text-gray-500">No events found.</p>
+        <p className="py-12 text-center text-muted-foreground">
+          No events found.
+        </p>
       ) : (
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {data.map((e: IEvent) => (

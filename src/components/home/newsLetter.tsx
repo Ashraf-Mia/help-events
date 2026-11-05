@@ -20,7 +20,7 @@ const Newsletter = () => {
             <Input
               type="email"
               placeholder="Enter your email address"
-              className="h-11 border-white/20 bg-white text-gray-900"
+              className="h-11 border-white/20 bg-card text-foreground"
             />
             <Button
               type="button"

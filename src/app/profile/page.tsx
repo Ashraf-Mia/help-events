@@ -63,7 +63,7 @@ const ProfilePage = () => {
 
   if (isPending) {
     return (
-      <div className="flex min-h-[60vh] items-center justify-center text-gray-500">
+      <div className="flex min-h-[60vh] items-center justify-center text-muted-foreground">
         Loading...
       </div>
     );
@@ -72,7 +72,9 @@ const ProfilePage = () => {
   if (!user) {
     return (
       <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 px-4 text-center">
-        <p className="text-gray-600">Please sign in to view your profile.</p>
+        <p className="text-muted-foreground">
+          Please sign in to view your profile.
+        </p>
         <Link
           href="/signIn"
           className="rounded-full bg-[#0E3B43] px-6 py-2 text-sm font-semibold text-white hover:bg-[#206470]"
@@ -86,11 +88,11 @@ const ProfilePage = () => {
   return (
     <div className="mx-auto w-full max-w-md px-4 py-8 sm:py-12">
       <h2 className="text-center text-2xl font-bold sm:text-3xl">My Profile</h2>
-      <p className="px-2 pb-6 pt-1 text-center text-sm font-medium text-black/50">
+      <p className="px-2 pb-6 pt-1 text-center text-sm font-medium text-muted-foreground">
         Update your name and profile photo.
       </p>
 
-      <div className="rounded-2xl border bg-white p-5 shadow-sm sm:p-8">
+      <div className="rounded-2xl border bg-card p-5 shadow-sm sm:p-8">
         <div className="mb-6 flex flex-col items-center">
           <Avatar className="size-24">
             <AvatarImage
@@ -103,7 +105,7 @@ const ProfilePage = () => {
             </AvatarFallback>
           </Avatar>
           <p className="mt-3 text-lg font-semibold">{user.name}</p>
-          <p className="text-sm text-gray-500">{user.email}</p>
+          <p className="text-sm text-muted-foreground">{user.email}</p>
         </div>
 
         <form onSubmit={onSubmit}>

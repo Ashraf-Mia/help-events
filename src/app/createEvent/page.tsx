@@ -72,14 +72,14 @@ const CreateEventPage = () => {
       <h2 className="text-center text-2xl font-bold sm:text-3xl">
         Create a Community Event
       </h2>
-      <p className="px-2 pb-6 pt-1 text-center text-sm font-medium text-black/50">
+      <p className="px-2 pb-6 pt-1 text-center text-sm font-medium text-muted-foreground">
         Fill in the details below to organize a social service event in your
         community.
       </p>
 
       <form
         onSubmit={onSubmit}
-        className="rounded-2xl border bg-white p-5 shadow-sm sm:p-8"
+        className="rounded-2xl border bg-card p-5 shadow-sm sm:p-8"
       >
         <FieldGroup>
           <FieldGroup>

@@ -18,6 +18,7 @@ import {
   User,
 } from "lucide-react";
 import HelpEventsLogo from "../shared/HelpEventsLogo";
+import DarkAndLightModeButton from "../dark-lightButton";
 
 export default function Navbar() {
   const router = useRouter();
@@ -45,6 +46,7 @@ export default function Navbar() {
         </Link>
 
         <div className="flex shrink-0 items-center justify-end gap-2 sm:gap-6">
+          <DarkAndLightModeButton />
           {user ? (
             <Popover>
               <PopoverTrigger
@@ -71,28 +73,28 @@ export default function Navbar() {
                 <div className="flex flex-col gap-1 p-2">
                   <Link
                     href="/createEvent"
-                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-[#0E3B43]/10 hover:text-[#0E3B43]"
+                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-[#0E3B43]/10 hover:text-[#0E3B43]"
                   >
                     <CalendarPlus className="size-4" />
                     Create Event
                   </Link>
                   <Link
                     href="/manageEvents"
-                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-[#0E3B43]/10 hover:text-[#0E3B43]"
+                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-[#0E3B43]/10 hover:text-[#0E3B43]"
                   >
                     <CalendarCog className="size-4" />
                     Manage Events
                   </Link>
                   <Link
                     href="/joinedEvents"
-                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-[#0E3B43]/10 hover:text-[#0E3B43]"
+                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-[#0E3B43]/10 hover:text-[#0E3B43]"
                   >
                     <CalendarCheck className="size-4" />
                     Joined Events
                   </Link>
                   <Link
                     href="/profile"
-                    className="flex items-center gap-3 rounded-lg px-3 pt-2  text-sm font-medium text-gray-700 transition-colors hover:bg-[#0E3B43]/10 hover:text-[#0E3B43]"
+                    className="flex items-center gap-3 rounded-lg px-3 pt-2  text-sm font-medium text-foreground transition-colors hover:bg-[#0E3B43]/10 hover:text-[#0E3B43]"
                   >
                     <User className="size-4" />
                     Profile

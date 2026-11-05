@@ -48,19 +48,15 @@ const ManageEventsPage = async () => {
       <div className="mb-8 flex flex-col gap-4 border-b pb-6">
         <div>
           <h1 className="text-2xl font-bold sm:text-3xl">My Events</h1>
-          <p className="mt-2 max-w-xl text-sm text-gray-600 sm:text-base">
+          <p className="mt-2 max-w-xl text-sm text-muted-foreground sm:text-base">
             Manage and view your upcoming events. Keep track of everything you
             have created and stay connected with your community.
           </p>
         </div>
       </div>
 
-      {!user ? (
-        <p className="py-12 text-center text-gray-500">
-          Please log in to see your events.
-        </p>
-      ) : events.length === 0 ? (
-        <p className="py-12 text-center text-gray-500">
+      {events.length === 0 ? (
+        <p className="py-12 text-center text-muted-foreground">
           You have no event yet.
         </p>
       ) : (
@@ -70,11 +66,6 @@ const ManageEventsPage = async () => {
           ))}
         </div>
       )}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {events.map((event) => (
-          <ManageEventCard key={event._id} event={event} />
-        ))}
-      </div>
     </div>
   );
 };

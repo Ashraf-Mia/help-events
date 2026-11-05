@@ -43,12 +43,12 @@ const EventDetailsPage = async ({
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
       <Link
         href="/upcomingEvents"
-        className="mb-6 inline-block text-sm text-gray-500 hover:text-[#0E3B43]"
+        className="mb-6 inline-block text-sm text-muted-foreground hover:text-[#0E3B43]"
       >
         ← Back to events
       </Link>
 
-      <div className="overflow-hidden rounded-2xl bg-gray-100">
+      <div className="overflow-hidden rounded-2xl bg-muted">
         <Image
           src={event.thumbnail}
           width={56}
@@ -67,12 +67,12 @@ const EventDetailsPage = async ({
 
           <h2 className="mt-8 text-lg font-semibold">About this event</h2>
 
-          <p className="mt-2 whitespace-pre-line text-gray-600">
+          <p className="mt-2 whitespace-pre-line text-muted-foreground">
             {event.description}
           </p>
 
           <h2 className="mt-8 text-lg font-semibold">Event guidelines</h2>
-          <ul className="mt-2 list-disc space-y-2 pl-5 text-gray-600">
+          <ul className="mt-2 list-disc space-y-2 pl-5 text-muted-foreground">
             <li>
               Please arrive 10 minutes early and be respectful to everyone.
             </li>
@@ -81,19 +81,23 @@ const EventDetailsPage = async ({
           </ul>
         </div>
 
-        <div className="h-fit rounded-2xl border bg-white p-5 shadow-sm sm:p-6 lg:sticky lg:top-24">
+        <div className="h-fit rounded-2xl border bg-card p-5 shadow-sm sm:p-6 lg:sticky lg:top-24">
           <div className="space-y-4 text-sm">
             <p className="flex items-start gap-3">
               <CalendarDays className="mt-0.5 size-5 shrink-0 text-[#2FA37A]" />
               <span>
-                <span className="block text-xs text-gray-500">Date</span>
+                <span className="block text-xs text-muted-foreground">
+                  Date
+                </span>
                 {formattedDate}
               </span>
             </p>
             <p className="flex items-start gap-3">
               <MapPin className="mt-0.5 size-5 shrink-0 text-[#2FA37A]" />
               <span>
-                <span className="block text-xs text-gray-500">Location</span>
+                <span className="block text-xs text-muted-foreground">
+                  Location
+                </span>
                 {event.location}
               </span>
             </p>
@@ -113,7 +117,9 @@ const EventDetailsPage = async ({
                 </div>
               )}
               <span className="min-w-0">
-                <span className="block text-xs text-gray-500">Organizer</span>
+                <span className="block text-xs text-muted-foreground">
+                  Organizer
+                </span>
                 <span className="block truncate font-medium">
                   {organizerName}
                 </span>

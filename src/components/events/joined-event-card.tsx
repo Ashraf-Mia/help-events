@@ -36,8 +36,8 @@ const JoinedEventCard = ({ event }: { event: IJoinedEvent }) => {
   const joinedDate = getJoinedDate(event);
 
   return (
-    <div className="flex h-full flex-col overflow-hidden rounded-2xl border bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
-      <div className="relative h-48 w-full overflow-hidden bg-gray-100">
+    <div className="flex h-full flex-col overflow-hidden rounded-2xl border bg-card shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
+      <div className="relative h-48 w-full overflow-hidden bg-muted">
         <Image
           src={event.thumbnail}
           width={300}
@@ -45,17 +45,17 @@ const JoinedEventCard = ({ event }: { event: IJoinedEvent }) => {
           alt={event.title}
           className="h-full w-full object-cover"
         />
-        <span className="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-[#0E3B43] shadow-sm">
+        <span className="absolute left-3 top-3 rounded-full bg-card px-3 py-1 text-xs font-semibold text-[#0E3B43] shadow-sm">
           {event.type}
         </span>
       </div>
 
       <div className="flex flex-1 flex-col p-5">
-        <h3 className="line-clamp-1 text-lg font-semibold text-gray-900">
+        <h3 className="line-clamp-1 text-lg font-semibold text-foreground">
           {event.title}
         </h3>
 
-        <div className="mt-3 space-y-1.5 text-sm text-gray-600">
+        <div className="mt-3 space-y-1.5 text-sm text-muted-foreground">
           <p className="flex items-center gap-2">
             <CalendarDays className="size-4 shrink-0 text-[#2FA37A]" />
             {eventDate}
@@ -66,7 +66,7 @@ const JoinedEventCard = ({ event }: { event: IJoinedEvent }) => {
           </p>
         </div>
 
-        <p className="mt-3 line-clamp-2 text-sm text-gray-500">
+        <p className="mt-3 line-clamp-2 text-sm text-muted-foreground">
           {event.description}
         </p>
 

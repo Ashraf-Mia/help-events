@@ -36,7 +36,7 @@ const SearchBox = ({ type, search }: Props) => {
 
   return (
     <div className="relative w-full md:w-72">
-      <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-gray-400" />
+      <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
       <Input
         value={text}
         onChange={(e) => setText(e.target.value)}

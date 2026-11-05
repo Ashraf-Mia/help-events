@@ -19,7 +19,7 @@ const Gallery = () => {
         <h2 className="text-2xl font-bold sm:text-3xl">
           Moments from our community
         </h2>
-        <p className="mx-auto mt-3 max-w-xl text-sm text-gray-600 sm:text-base">
+        <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground sm:text-base">
           Real people. Real streets. Real difference.
         </p>
       </div>
@@ -28,7 +28,7 @@ const Gallery = () => {
         {photos.map((p) => (
           <div
             key={p.src}
-            className="group relative aspect-4/3 overflow-hidden rounded-2xl bg-gray-100"
+            className="group relative aspect-4/3 overflow-hidden rounded-2xl bg-muted"
           >
             <Image
               src={p.src}

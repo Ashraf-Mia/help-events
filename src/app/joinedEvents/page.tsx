@@ -39,7 +39,7 @@ const JoinedEventsPage = async () => {
       <div className="mb-8 flex flex-col gap-4 border-b pb-6">
         <div>
           <h1 className="text-2xl font-bold sm:text-3xl">Joined Events</h1>
-          <p className="mt-2 max-w-xl text-sm text-gray-600 sm:text-base">
+          <p className="mt-2 max-w-xl text-sm text-muted-foreground sm:text-base">
             Keep track of the events you have joined and view the details of
             each one. Stay connected with your community.
           </p>
@@ -47,7 +47,7 @@ const JoinedEventsPage = async () => {
       </div>
 
       {events.length === 0 ? (
-        <p className="py-12 text-center text-gray-500">
+        <p className="py-12 text-center text-muted-foreground">
           You have not joined any events yet.
         </p>
       ) : (

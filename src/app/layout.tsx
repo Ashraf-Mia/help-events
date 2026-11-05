@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/home/Navbar";
 import { Toaster } from "@/components/ui/toast";
 import Footer from "@/components/home/Footer";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,14 +30,20 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      data-theme="light"
+      suppressHydrationWarning
       className={cn("h-full", inter.variable, geistMono.variable, "font-sans")}
     >
       <body className="flex min-h-full flex-col">
-        <Navbar />
-        <div> {children}</div>
-        <Footer />
-        <Toaster />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+        >
+          <Navbar />
+          <div> {children}</div>
+          <Footer />
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -7,7 +7,7 @@ const UpcomingType = async ({ type }: { type?: string }) => {
   const base =
     "rounded-full border px-4 py-1.5 text-sm font-medium transition-colors";
   const active = "border-[#0E3B43] bg-[#0E3B43] text-white";
-  const normal = "bg-white text-gray-700 hover:bg-gray-100";
+  const normal = "bg-card text-foreground hover:bg-muted";
 
   return (
     <div className="flex flex-wrap gap-2">

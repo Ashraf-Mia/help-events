@@ -105,13 +105,13 @@ const SignUpPage = () => {
       <h2 className="text-center text-2xl font-bold sm:text-3xl">
         Create your account
       </h2>
-      <p className="px-2 pb-6 pt-1 text-center text-sm font-medium text-black/50">
+      <p className="px-2 pb-6 pt-1 text-center text-sm font-medium text-muted-foreground">
         Sign up for free and start joining community events.
       </p>
 
       <form
         onSubmit={onSubmit}
-        className="w-full max-w-md rounded-2xl border bg-white p-5 shadow-sm sm:p-8"
+        className="w-full max-w-md rounded-2xl border bg-card p-5 shadow-sm sm:p-8"
       >
         <FieldGroup>
           <Field>
@@ -249,7 +249,7 @@ const SignUpPage = () => {
         </p>
         <Link
           href="/"
-          className="flex justify-center pt-4 text-sm text-black/50"
+          className="flex justify-center pt-4 text-sm text-muted-foreground"
         >
           ← Back to home
         </Link>

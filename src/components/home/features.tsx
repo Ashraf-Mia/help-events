@@ -35,7 +35,7 @@ const Features = () => {
         <h2 className="text-2xl font-bold sm:text-3xl">
           Everything you need to do good, together
         </h2>
-        <p className="mx-auto mt-3 max-w-xl text-sm text-gray-600 sm:text-base">
+        <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground sm:text-base">
           From the first idea to the last volunteer, in one place.
         </p>
       </div>
@@ -44,13 +44,13 @@ const Features = () => {
         {features.map((f) => (
           <div
             key={f.title}
-            className="rounded-2xl border bg-white p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
+            className="rounded-2xl border bg-card p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
           >
             <div className="flex size-12 items-center justify-center rounded-xl bg-[#FFC94A]/30">
               <f.icon className="size-6 text-[#0E3B43]" />
             </div>
             <h3 className="mt-4 text-lg font-semibold">{f.title}</h3>
-            <p className="mt-2 text-sm text-gray-600">{f.text}</p>
+            <p className="mt-2 text-sm text-muted-foreground">{f.text}</p>
           </div>
         ))}
       </div>
