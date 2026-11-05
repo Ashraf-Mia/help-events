@@ -23,7 +23,7 @@ const EventCard = ({ event }: { event: IEvent }) => {
           alt={event.title}
           className="h-full w-full object-cover"
         />
-        <span className="absolute left-3 top-3 rounded-full bg-card px-3 py-1 text-xs font-semibold text-[#0E3B43] shadow-sm">
+        <span className="absolute left-3 top-3 rounded-full bg-card px-3 py-1 text-xs font-semibold text-[#0E3B43] shadow-sm dark:text-[#FFC94A]">
           {event.type}
         </span>
       </div>

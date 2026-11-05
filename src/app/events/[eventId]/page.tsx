@@ -43,7 +43,7 @@ const EventDetailsPage = async ({
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
       <Link
         href="/upcomingEvents"
-        className="mb-6 inline-block text-sm text-muted-foreground hover:text-[#0E3B43]"
+        className="mb-6 inline-block text-sm text-muted-foreground hover:text-[#0E3B43] dark:hover:text-[#FFC94A]"
       >
         ← Back to events
       </Link>
@@ -60,7 +60,7 @@ const EventDetailsPage = async ({
 
       <div className="mt-8 grid gap-8 lg:grid-cols-3">
         <div className="lg:col-span-2">
-          <span className="inline-block rounded-full bg-[#0E3B43]/10 px-3 py-1 text-xs font-semibold text-[#0E3B43]">
+          <span className="inline-block rounded-full bg-[#0E3B43]/10 px-3 py-1 text-xs font-semibold text-[#0E3B43] dark:text-[#FFC94A]">
             {event.type}
           </span>
           <h1 className="mt-3 text-2xl font-bold sm:text-3xl">{event.title}</h1>

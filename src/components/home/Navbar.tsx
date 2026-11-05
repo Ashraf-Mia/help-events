@@ -51,13 +51,18 @@ export default function Navbar() {
             <Popover>
               <PopoverTrigger
                 render={
-                  <Avatar>
-                    <AvatarImage
-                      referrerPolicy="no-referrer"
-                      src={user?.image as string}
-                    />
-                    <AvatarFallback>{user?.name.charAt(0)}</AvatarFallback>
-                  </Avatar>
+                  <button
+                    type="button"
+                    className="rounded-full outline-none cursor-pointer"
+                  >
+                    <Avatar>
+                      <AvatarImage
+                        referrerPolicy="no-referrer"
+                        src={user?.image as string}
+                      />
+                      <AvatarFallback>{user?.name.charAt(0)}</AvatarFallback>
+                    </Avatar>
+                  </button>
                 }
               />
               <PopoverContent align="end" className="w-64 overflow-hidden p-0">
@@ -73,28 +78,28 @@ export default function Navbar() {
                 <div className="flex flex-col gap-1 p-2">
                   <Link
                     href="/createEvent"
-                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-[#0E3B43]/10 hover:text-[#0E3B43]"
+                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-[#0E3B43]/10 hover:text-[#0E3B43] dark:hover:text-[#FFC94A]"
                   >
                     <CalendarPlus className="size-4" />
                     Create Event
                   </Link>
                   <Link
                     href="/manageEvents"
-                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-[#0E3B43]/10 hover:text-[#0E3B43]"
+                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-[#0E3B43]/10 hover:text-[#0E3B43] dark:hover:text-[#FFC94A]"
                   >
                     <CalendarCog className="size-4" />
                     Manage Events
                   </Link>
                   <Link
                     href="/joinedEvents"
-                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-[#0E3B43]/10 hover:text-[#0E3B43]"
+                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-[#0E3B43]/10 hover:text-[#0E3B43] dark:hover:text-[#FFC94A]"
                   >
                     <CalendarCheck className="size-4" />
                     Joined Events
                   </Link>
                   <Link
                     href="/profile"
-                    className="flex items-center gap-3 rounded-lg px-3 pt-2  text-sm font-medium text-foreground transition-colors hover:bg-[#0E3B43]/10 hover:text-[#0E3B43]"
+                    className="flex items-center gap-3 rounded-lg px-3 py-2  text-sm font-medium text-foreground transition-colors hover:bg-[#0E3B43]/10 hover:text-[#0E3B43] dark:hover:text-[#FFC94A]"
                   >
                     <User className="size-4" />
                     Profile
@@ -104,7 +109,7 @@ export default function Navbar() {
                 <div className="border-t p-2">
                   <button
                     onClick={handleSignOut}
-                    className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-red-600 transition-colors hover:bg-red-50"
+                    className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-red-600 transition-colors hover:bg-red-50 dark:hover:bg-red-950/30"
                   >
                     <LogOut className="size-4" />
                     Sign Out

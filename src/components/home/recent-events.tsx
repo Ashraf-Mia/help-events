@@ -15,7 +15,9 @@ const RecentEvents = async () => {
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h2 className="text-2xl font-bold sm:text-3xl">Upcoming Events</h2>
+            <h2 className="text-2xl font-bold sm:text-3xl">
+              Recent Upcoming Events
+            </h2>
             <p className="mt-2 text-sm text-muted-foreground sm:text-base">
               Pick an event near you and be part of the change.
             </p>

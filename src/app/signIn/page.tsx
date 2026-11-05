@@ -164,7 +164,7 @@ const SignInPage = () => {
           Don&apos;t have an account?{" "}
           <Link
             href="/signUp"
-            className="font-medium text-[#0E3B43] underline-offset-4 hover:underline"
+            className="font-medium text-[#0E3B43] underline-offset-4 hover:underline dark:text-[#FFC94A]"
           >
             Sign up
           </Link>

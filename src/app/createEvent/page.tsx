@@ -24,7 +24,7 @@ const eventTypes = [
 ];
 
 const selectClass =
-  "h-9 w-full rounded-md border border-input bg-transparent px-3 text-sm shadow-xs outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50";
+  "h-9 w-full rounded-md border border-input bg-background px-3 text-sm [&>option]:bg-background [&>option]:text-foreground shadow-xs outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50";
 
 const CreateEventPage = () => {
   const { data: session } = authClient.useSession();

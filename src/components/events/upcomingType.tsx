@@ -6,7 +6,7 @@ const UpcomingType = async ({ type }: { type?: string }) => {
 
   const base =
     "rounded-full border px-4 py-1.5 text-sm font-medium transition-colors";
-  const active = "border-[#0E3B43] bg-[#0E3B43] text-white";
+  const active = "border-[#0E3B43] bg-[#0E3B43] text-white dark:border-[#2FA37A] dark:bg-[#2FA37A]";
   const normal = "bg-card text-foreground hover:bg-muted";
 
   return (

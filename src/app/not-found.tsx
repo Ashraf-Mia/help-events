@@ -11,7 +11,7 @@ const NotFound = () => {
 
   return (
     <div className="flex min-h-[70vh] flex-col items-center justify-center px-4 py-12 text-center">
-      <h1 className="text-8xl font-extrabold tracking-tight text-[#0E3B43] sm:text-9xl">
+      <h1 className="text-8xl font-extrabold tracking-tight text-[#0E3B43] dark:text-white sm:text-9xl">
         4<span className="text-[#FFC94A]">0</span>4
       </h1>
 

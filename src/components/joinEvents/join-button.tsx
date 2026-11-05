@@ -126,7 +126,7 @@ const JoinButton = ({ event, isPast }: Props) => {
         variant={isJoined === true ? "outline" : "default"}
         className={
           isJoined === true
-            ? "h-11 w-full border-red-300 text-red-600 hover:bg-red-50 hover:text-red-600"
+            ? "h-11 w-full border-red-300 text-red-600 hover:bg-red-50 hover:text-red-600 dark:hover:bg-red-950/30"
             : "h-11 w-full bg-[#0E3B43] text-white hover:bg-[#206470]"
         }
       >

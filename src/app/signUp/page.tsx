@@ -242,7 +242,7 @@ const SignUpPage = () => {
           Already have an account?{" "}
           <Link
             href="/signIn"
-            className="font-medium text-[#0E3B43] underline-offset-4 hover:underline"
+            className="font-medium text-[#0E3B43] underline-offset-4 hover:underline dark:text-[#FFC94A]"
           >
             Sign in
           </Link>

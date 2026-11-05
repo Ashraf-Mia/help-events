@@ -47,7 +47,7 @@ const Features = () => {
             className="rounded-2xl border bg-card p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
           >
             <div className="flex size-12 items-center justify-center rounded-xl bg-[#FFC94A]/30">
-              <f.icon className="size-6 text-[#0E3B43]" />
+              <f.icon className="size-6 text-[#0E3B43] dark:text-[#FFC94A]" />
             </div>
             <h3 className="mt-4 text-lg font-semibold">{f.title}</h3>
             <p className="mt-2 text-sm text-muted-foreground">{f.text}</p>
