@@ -9,10 +9,15 @@ const ManageEventsPage = async () => {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
+  console.log(session);
+
   const user = session?.user;
+  console.log(user);
+
   let events: IEvent[] = [];
 
   const token = await getTokenFromServer();
+  console.log(token);
 
   if (user?.email) {
     try {

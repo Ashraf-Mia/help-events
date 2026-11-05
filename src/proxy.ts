@@ -19,5 +19,5 @@ export async function proxy(request: NextRequest) {
 // export default function proxy(request: NextRequest) { ... }
 
 export const config = {
-  matcher: ["/createEvent", "/joinedEvents", "/manageEvents"],
+  matcher: ["/createEvent", "/joinedEvents", "/manageEvents", "/profile"],
 };
