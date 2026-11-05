@@ -63,16 +63,16 @@ The main goal of this platform is to bring people together and help others throu
 ### 1. Clone the Client Repository
 
 ```bash
-git clone YOUR_CLIENT_REPOSITORY_URL
-cd YOUR_CLIENT_PROJECT_FOLDER
+git clone https://github.com/Ashraf-Mia/help-events.git
+cd help-events
 npm install
 ```
 
 ### 2. Clone the Server Repository
 
 ```bash
-git clone YOUR_SERVER_REPOSITORY_URL
-cd YOUR_SERVER_PROJECT_FOLDER
+git clone https://github.com/Ashraf-Mia/help-event-server.git
+cd help-event-server
 npm install
 ```
 
