@@ -19,25 +19,26 @@ const ManageEventsPage = async () => {
   const token = await getTokenFromServer();
   console.log(token);
 
-  if (user?.email) {
-    try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/my-events/${user.email}`,
-        {
-          cache: "no-store",
-          headers: {
-            authorization: `Bearer ${token}`,
-          },
+  // if (user?.email) {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/my-events/${user?.email}`,
+      {
+        cache: "no-store",
+        headers: {
+          authorization: `Bearer ${token}`,
         },
-      );
-      if (res.ok) {
-        const data = await res.json();
-        events = Array.isArray(data) ? data : [];
-      }
-    } catch (error) {
-      console.error("Failed to fetch bookings:", error);
+      },
+    );
+    if (res.ok) {
+      const data = await res.json();
+      events = Array.isArray(data) ? data : [];
     }
+  } catch (error) {
+    console.error("Failed to fetch bookings:", error);
+    console.log("Failed to fetch bookings:", error);
   }
+  // }
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
